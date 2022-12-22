@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../includes/game.h"
 
 int main(int ac, char **av)
 {
