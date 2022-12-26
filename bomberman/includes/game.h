@@ -17,10 +17,10 @@ public:
 private:
 	
 protected:
-	std::vector<player *> players;
-	std::vector<bot *> bots;
-	std::vector<bomb *> bombs;
-	std::vector<bonus *> bonuses;
+//	std::vector<player *> players;
+//	std::vector<bot *> bots;
+//	std::vector<bomb *> bombs;
+//	std::vector<bonus *> bonuses;
 	carte map;
 	
 };

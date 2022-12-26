@@ -9,3 +9,4 @@ clean:
 	rm -rf *.o bomberman
 fclean: clean
 	rm -f *~
+re: clean fclean bomberman

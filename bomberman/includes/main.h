@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <vector>
+#include <string>
 
 
 enum classes
@@ -16,12 +17,13 @@ enum classes
 class gameobject
 {
 public:
-	gameobject();
+	gameobject(int _x, int _y);
 	virtual void update() = 0;
 	int getx() const;
 	int gety() const;
 	bool isalive() const;
 	void setclass(classes);
+	std::string getclass();
 	~gameobject();
 	
 private:
