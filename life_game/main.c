@@ -49,10 +49,11 @@ int count_neib(int i, int j)
 void update_map(void)
 {
 	char **newmap = malloc(sizeof(char *) * (raw_number + 1));
-	for (int i = 0; i < raw_number; i++)
+	int i = 0, j = 0;
+	while (i < raw_number)
 	{
 		newmap[i] = malloc(sizeof(char) * (raw_number + 1));
-		for (int j = 0; j < raw_number; j++)
+		while (j < raw_number)
 		{
 			int neib = count_neib(i,j);
 			if (map[i][j] == '*')
@@ -72,7 +73,11 @@ void update_map(void)
 				else
 					newmap[i][j] = ' ';
 			}
+			j++;
 		}
+		newmap[i][j] = '\0';
+		i++;
+		j = 0; 
 	}
 	for (int i = 0;  i < raw_number; i++)
 	{
@@ -110,7 +115,7 @@ int start_program(int ac, char **av)
 void disp_map(void)
 {
 	int i = 0;
-	while (map[i])
+	while (i < raw_number)
 	{
 		printf("%s\n", map[i]);
 		i++;
@@ -121,7 +126,10 @@ void disp_map(void)
 int main(int ac, char **av)
 {
 	if (start_program(ac, av) == -1)
+	{
+		printf("%s\n", "usage: ./a.out raw_number(int)");
 		return (-1);
+	}
 	generate_map();
 	while (true)
 	{
